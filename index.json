@@ -1,0 +1,10 @@
+{
+  "packages": [
+    {
+      "name": "hello",
+      "version": "1.0.0",
+      "url": "https://example.com/hello-1.0.0.tar.gz",
+      "sha256": "abc123...hex..."
+    }
+  ]
+}
