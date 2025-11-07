@@ -1,10 +1,10 @@
 {
   "packages": [
     {
-      "name": "hello",
+      "name": "kernel",
       "version": "1.0.0",
-      "url": "https://example.com/hello-1.0.0.tar.gz",
-      "sha256": "abc123...hex..."
+      "url": "https://taiko.keitagames.com/downloads/linux.tar.gz",
+      "sha256": "69d4074cfaa9e75ddc30c0ed265b9be4a9c6bc38e4729269b3c1ec1c4ca9e440"
     }
   ]
 }
