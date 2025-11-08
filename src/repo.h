@@ -7,6 +7,7 @@ typedef struct {
     char version[32];
     char url[256];
     char sha256[65];
+    char path[256];
 } PackageInfo;
 
 // index.jsonからパッケージ情報を検索
