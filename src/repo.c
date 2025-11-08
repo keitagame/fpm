@@ -6,7 +6,7 @@
 #include <string.h>
 
 int repo_lookup(const char *name, PackageInfo *out) {
-    FILE *fp = fopen("index.json", "r");
+    FILE *fp = fopen("/etc/fpm/index.json", "r");
     if (!fp) return -1;
     fseek(fp, 0, SEEK_END);
     long len = ftell(fp);
