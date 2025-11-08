@@ -29,6 +29,7 @@ int repo_lookup(const char *name, PackageInfo *out) {
             strcpy(out->version, cJSON_GetObjectItem(pkg, "version")->valuestring);
             strcpy(out->url, cJSON_GetObjectItem(pkg, "url")->valuestring);
             strcpy(out->sha256, cJSON_GetObjectItem(pkg, "sha256")->valuestring);
+            strcpy(out->path, cJSON_GetObjectItem(pkg, "path")->valuestring);
             cJSON_Delete(root);
             return 0;
         }
