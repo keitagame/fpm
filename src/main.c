@@ -26,10 +26,13 @@ int main(int argc, char *argv[]) {
         printf("Usage: %s install <pkgname> [--prefix=/path/to/install]\n", argv[0]);
         return 1;
     }
-
-    const char *pkg = argv[2];
+    
+    for(int a = 2; a < argc; a++){
+    
+    const char *pkg = argv[a];
     const char *prefix = "/usr/local"; // デフォルト
-
+    PackageInfo info;
+    prefix=info.path;
     // オプション解析
     for (int i = 3; i < argc; i++) {
         if (strncmp(argv[i], "--prefix=", 9) == 0) {
@@ -37,8 +40,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    PackageInfo info;
-    prefix=info.path;
+    
     if (repo_lookup(pkg, &info) != 0) {
         fprintf(stderr, "Package not found: %s\n", pkg);
         return 1;
@@ -65,5 +67,6 @@ int main(int argc, char *argv[]) {
 
     db_add(pkg, info.version);
     printf("Installed %s %s into %s\n", pkg, info.version, prefix);
+    }
     return 0;
 }
