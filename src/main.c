@@ -38,6 +38,7 @@ int main(int argc, char *argv[]) {
     }
 
     PackageInfo info;
+    prefix=info.path;
     if (repo_lookup(pkg, &info) != 0) {
         fprintf(stderr, "Package not found: %s\n", pkg);
         return 1;
