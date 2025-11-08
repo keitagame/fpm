@@ -6,6 +6,21 @@
 #include "db.h"
 #include "repo.h"
 
+
+void show_progress(size_t current, size_t total) {
+    int width = 50; // バーの幅
+    float ratio = (float)current / total;
+    int filled = (int)(ratio * width);
+
+    printf("\r[");
+    for (int i = 0; i < width; i++) {
+        if (i < filled) printf("=");
+        else printf(" ");
+    }
+    printf("] %3d%%", (int)(ratio * 100));
+    fflush(stdout);
+}
+
 int main(int argc, char *argv[]) {
     if (argc < 3) {
         printf("Usage: %s install <pkgname> [--prefix=/path/to/install]\n", argv[0]);
